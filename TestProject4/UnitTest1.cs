@@ -35,9 +35,11 @@ namespace TestProject4
 
            
 
-            pageEA.txtInitial.SendKeys("execute automation");
+           
 
-            pageEA.btnSave.Click();
+            System.Threading.Thread.Sleep(3000);
+            var pizda = (SeleniumGetMethods.GetText(".//input[@id='Initial']", "XPath"));
+            System.Console.WriteLine(pizda);
 
         }
 
