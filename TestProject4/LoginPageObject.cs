@@ -28,11 +28,11 @@ namespace TestProject4
         public EAPageObject Login(string userName, string password)
         {
             //UserName
-            txtUserName.SendKeys(userName);
+            txtUserName.EnterText(userName);
             //password
-            txtPassword.SendKeys(password);
+            txtPassword.EnterText(password);
             //Click button
-            btnLogin.Submit();
+            btnLogin.Clicks();
 
             //Return the page object
             return new EAPageObject();
