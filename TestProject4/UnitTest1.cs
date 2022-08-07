@@ -33,14 +33,6 @@ namespace TestProject4
             pageEA.FillUserForm("MR.", "VOVA", "GAY");
 
 
-           
-
-           
-
-            System.Threading.Thread.Sleep(3000);
-            var pizda = (SeleniumGetMethods.GetText(".//input[@id='Initial']", "XPath"));
-            System.Console.WriteLine(pizda);
-
         }
 
         [TearDown]

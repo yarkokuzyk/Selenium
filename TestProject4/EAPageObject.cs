@@ -36,10 +36,17 @@ namespace TestProject4
 
         public void FillUserForm(string initial, string firstname, string middlename)
         {
-            txtInitial.SendKeys(initial);
+
+            SeleniumSetMethods.EnterText(txtInitial, initial);
+            SeleniumSetMethods.EnterText(txtFirstName, firstname);
+            SeleniumSetMethods.EnterText(txtMiddleName, middlename);
+            SeleniumSetMethods.Click(btnSave);
+
+
+            /*txtInitial.SendKeys(initial);
             txtFirstName.SendKeys(firstname);
             txtMiddleName.SendKeys(middlename);
-            btnSave.Click();
+            btnSave.Click();*/
         }
 
 

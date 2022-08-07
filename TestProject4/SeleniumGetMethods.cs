@@ -10,22 +10,16 @@ namespace TestProject4
 {
     internal class SeleniumGetMethods
     {
-        public static string GetText(string element, string type)
+        public static string GetText(IWebElement element)
         {
-            if (type == "XPath")
-            {
-                return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("value");
-            }
-            else return String.Empty;
+            return element.GetAttribute("value");
         }
 
-        public static string GetTextFromDDL(string element, string type)
+        public static string GetTextFromDDL(IWebElement element)
         {
-            if (type == "XPath")
-            {
-                return new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).AllSelectedOptions.SingleOrDefault().Text;
-            }
-            else return String.Empty;
+            
+                return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text;
+            
         }
 
     }

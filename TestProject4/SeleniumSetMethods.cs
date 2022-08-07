@@ -12,32 +12,26 @@ namespace TestProject4
     {
 
         // SendKeys
-        public static void EnterText(string element, string value, string type)
+        public static void EnterText(IWebElement element, string value)
         {
-            if (type == "XPath")
-            {
-                PropertiesCollection.driver.FindElement(By.XPath(element)).SendKeys(value);
-            }
+            element.SendKeys(value);
+
         }
 
         //Click Something
-        public static void Click(string element, string type)
+        public static void Click(IWebElement element)
         {
-            if (type == "XPath")
-            {
-                PropertiesCollection.driver.FindElement(By.XPath(element)).Click();
-            }
+         element.Click();
             
         }
 
         // Selecting a drop down control
-        public static void SelectDropDown(string element, string value, string type)
+        public static void SelectDropDown(IWebElement element, string value)
         {
             
-            if (type == "XPath")
-            {
-               new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByText(value);
-            }
+            
+               new SelectElement(element).SelectByText(value);
+            
         }
 
 
