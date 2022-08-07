@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Text;
 
 namespace TestProject4
 {
@@ -25,12 +26,14 @@ namespace TestProject4
         [Test]
         public void Test1()
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance); // без цьої хуйні не працює
+            ExcelUtil.PopulateInCollection("./Data.xlsx");
 
             //Login to Application
             LoginPageObject pageLogin = new LoginPageObject();
-            EAPageObject pageEA = pageLogin.Login("execute", "automation");
+            EAPageObject pageEA = pageLogin.Login(ExcelUtil.ReadData(1,"UserName"), ExcelUtil.ReadData(1, "Password"));
 
-            pageEA.FillUserForm("MR.", "VOVA", "GAY");
+            pageEA.FillUserForm(ExcelUtil.ReadData(1, "Initial"), ExcelUtil.ReadData(1, "FirstName"), ExcelUtil.ReadData(1,"MiddleName"));
 
 
         }
