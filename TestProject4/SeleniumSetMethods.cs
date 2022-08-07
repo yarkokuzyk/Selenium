@@ -11,6 +11,9 @@ namespace TestProject4
     public static class SeleniumSetMethods
     {
 
+
+        //Передаємо методам елемент що містить локатор та значення яке ми хочемо в нього передати.
+
         /// <summary>
         /// Extended method for entering text in the control
         /// </summary>

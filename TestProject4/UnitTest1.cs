@@ -31,8 +31,11 @@ namespace TestProject4
 
             //Login to Application
             LoginPageObject pageLogin = new LoginPageObject();
+
+            //Щоб перейти на іншу сторінку нам потрібно по-перше створити для неї об'єкт, а подруге - викликати метод що призведе до редіректу
             EAPageObject pageEA = pageLogin.Login(ExcelUtil.ReadData(1,"UserName"), ExcelUtil.ReadData(1, "Password"));
 
+            //Заповнюємо форму інфорю з іксель документа
             pageEA.FillUserForm(ExcelUtil.ReadData(1, "Initial"), ExcelUtil.ReadData(1, "FirstName"), ExcelUtil.ReadData(1,"MiddleName"));
 
 
